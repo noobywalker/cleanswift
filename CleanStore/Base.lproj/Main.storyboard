@@ -59,7 +59,6 @@
         <!--Create Order-->
         <scene sceneID="G8V-I1-PrR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nAv-bf-Ldc" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController storyboardIdentifier="CreateOrderViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JXA-qN-BH6" customClass="CreateOrderViewController" customModule="CleanStore" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="zTv-M3-iLw">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
@@ -211,6 +210,7 @@
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="cKq-SW-LL4"/>
                     </navigationItem>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nAv-bf-Ldc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1447" y="492"/>
         </scene>

@@ -24,7 +24,7 @@ protocol ListOrdersInteractorOutput
 class ListOrdersInteractor: ListOrdersInteractorInput
 {
   var output: ListOrdersInteractorOutput!
-  var worker = OrdersWorker()
+  var worker = OrdersWorker(ordersStore: OrdersMemStore())
   
   func fetchOrders(request: ListOrders_FetchOrders_Request) {
     worker.fetchOrders { (orders) in

@@ -50,7 +50,17 @@ class ListOrdersViewControllerTests: XCTestCase
   }
   
   // MARK: Test doubles
-  
+  class ListOrdersViewControllerOutputSpy: ListOrdersViewControllerOutput
+  {
+    // MARK: Method call expectations
+    var fetchOrdersCalled = false
+    
+    // MARK: Spied methods
+    func fetchOrders(request: ListOrders_FetchOrders_Request) {
+      fetchOrdersCalled = true
+    }
+  }
+
   // MARK: Tests
   
   func testShouldFetchOrdersWhenViewIsLoaded()

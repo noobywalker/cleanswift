@@ -39,6 +39,30 @@ class ListOrdersInteractorTests: XCTestCase
   }
   
   // MARK: Test doubles
+  class ListOrdersInteractorOutputSpy: ListOrdersInteractorOutput
+  {
+    // MARK: Method call expectations
+    var presentFetchedOrdersCalled = false
+    
+    // MARK: Spied methods
+    func presentFetchedOrders(response: ListOrders_FetchOrders_Response)
+    {
+      presentFetchedOrdersCalled = true
+    }
+  }
+  
+  class OrdersWorkerSpy: OrdersWorker
+  {
+    // MARK: Method call expectations
+    var fetchOrdersCalled = false
+    
+    // MARK: Spied methods
+    override func fetchOrders(completionHandler: (orders: [Order]) -> Void)
+    {
+      fetchOrdersCalled = true
+      completionHandler(orders: [])
+    }
+  }
   
   // MARK: Tests
   
@@ -47,7 +71,7 @@ class ListOrdersInteractorTests: XCTestCase
     // Given
     let listOrdersInteractorOutputSpy = ListOrdersInteractorOutputSpy()
     sut.output = listOrdersInteractorOutputSpy
-    let ordersWorkerSpy = OrdersWorkerSpy()
+    let ordersWorkerSpy = OrdersWorkerSpy(ordersStore: OrdersMemStore())
     sut.worker = ordersWorkerSpy
     
     // When

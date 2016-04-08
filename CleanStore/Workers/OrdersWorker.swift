@@ -11,12 +11,25 @@
 
 import UIKit
 
+protocol OrdersStoreProtocol
+{
+  func fetchOrders(completionHandler: (orders: [Order]) -> Void)
+}
+
 class OrdersWorker
 {
-  // MARK: Business Logic
+  var ordersStore: OrdersStoreProtocol
+  
+  init(ordersStore: OrdersStoreProtocol)
+  {
+    self.ordersStore = ordersStore
+  }
   
   func fetchOrders(completionHandler: (orders: [Order]) -> Void)
   {
-    completionHandler(orders: [])
+    
+    ordersStore.fetchOrders { (orders) in
+      completionHandler(orders: orders)
+    }
   }
 }
