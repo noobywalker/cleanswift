@@ -13,7 +13,7 @@ import UIKit
 
 protocol ListOrdersViewControllerInput
 {
-  func displaySomething(viewModel: ListOrdersViewModel)
+  func displayFetchedOrders(viewModel: ListOrders_FetchOrders_ViewModel)
 }
 
 protocol ListOrdersViewControllerOutput
@@ -25,7 +25,7 @@ class ListOrdersViewController: UITableViewController, ListOrdersViewControllerI
 {
   var output: ListOrdersViewControllerOutput!
   var router: ListOrdersRouter!
-  
+  var displayedOrders: [ListOrders_FetchOrders_ViewModel.DisplayedOrder] = []
   // MARK: Object lifecycle
   
   override func awakeFromNib()
@@ -53,15 +53,26 @@ class ListOrdersViewController: UITableViewController, ListOrdersViewControllerI
   }
   
   // MARK: Display logic
-  
-  func displaySomething(viewModel: ListOrdersViewModel)
-  {
-    // NOTE: Display the result from the Presenter
-    
-    // nameTextField.text = viewModel.name
+  func displayFetchedOrders(viewModel: ListOrders_FetchOrders_ViewModel) {
+    displayedOrders = viewModel.displayedOrders
+    tableView.reloadData()
   }
   
-  func displayFetchedOrders(viewModel: ListOrders_FetchOrders_ViewModel) {
-    
+  // MARK: Tableview delegate
+  override func numberOfSectionsInTableView(tableView: UITableView) -> Int
+  {
+    return 1
+  }
+  
+  override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
+  {
+    let displayedOrder = displayedOrders[indexPath.row]
+    var cell = tableView.dequeueReusableCellWithIdentifier("OrderTableViewCell")
+    if cell == nil {
+      cell = UITableViewCell(style: .Value1, reuseIdentifier: "OrderTableViewCell")
+    }
+    cell?.textLabel?.text = displayedOrder.date
+    cell?.detailTextLabel?.text = displayedOrder.total
+    return cell!
   }
 }
