@@ -31,3 +31,15 @@ struct ListOrders_FetchOrders_Response
 {
   var orders: [Order]
 }
+
+struct ListOrders_FetchOrders_ViewModel {
+  struct DisplayedOrder {
+    var id: String
+    var date: String
+    var email: String
+    var name: String
+    var total: String
+  }
+  var displayedOrders: [DisplayedOrder]
+
+}

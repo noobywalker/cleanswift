@@ -60,4 +60,8 @@ class ListOrdersViewController: UITableViewController, ListOrdersViewControllerI
     
     // nameTextField.text = viewModel.name
   }
+  
+  func displayFetchedOrders(viewModel: ListOrders_FetchOrders_ViewModel) {
+    
+  }
 }

@@ -13,5 +13,11 @@ import UIKit
 
 struct Order
 {
+  var id: String?
+  var date: NSDate?
+  var email: String?
+  var firstName: String?
+  var lastName: String?
+  var total: NSDecimalNumber?
 }
  
