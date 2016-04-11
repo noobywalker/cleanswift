@@ -14,6 +14,7 @@ import UIKit
 protocol ListOrdersInteractorInput
 {
   func fetchOrders(request: ListOrders_FetchOrders_Request)
+  var orders: [Order]? { get }
 }
 
 protocol ListOrdersInteractorOutput
@@ -26,8 +27,11 @@ class ListOrdersInteractor: ListOrdersInteractorInput
   var output: ListOrdersInteractorOutput!
   var worker = OrdersWorker(ordersStore: OrdersMemStore())
   
+  var orders: [Order]?
+  
   func fetchOrders(request: ListOrders_FetchOrders_Request) {
     worker.fetchOrders { (orders) in
+      self.orders = orders
       let response = ListOrders_FetchOrders_Response(orders: orders)
       self.output.presentFetchedOrders(response)
     }

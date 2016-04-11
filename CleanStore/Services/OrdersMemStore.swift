@@ -10,7 +10,11 @@ import UIKit
 
 class OrdersMemStore: OrdersStoreProtocol
 {
+  // MARK: Data
+  let orders = [Order(id: "abc123", date: NSDate(), email: "amy.apple@clean-swift.com", firstName: "Amy", lastName: "Apple", total: NSDecimalNumber(string: "1.23"))]
+  
   func fetchOrders(completionHandler: (orders: [Order]) -> Void)
   {
+    completionHandler(orders: orders)
   }
 }

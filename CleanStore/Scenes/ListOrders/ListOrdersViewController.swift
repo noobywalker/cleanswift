@@ -19,6 +19,7 @@ protocol ListOrdersViewControllerInput
 protocol ListOrdersViewControllerOutput
 {
   func fetchOrders(request: ListOrders_FetchOrders_Request)
+  var orders: [Order]? { get }
 }
 
 class ListOrdersViewController: UITableViewController, ListOrdersViewControllerInput
@@ -62,6 +63,10 @@ class ListOrdersViewController: UITableViewController, ListOrdersViewControllerI
   override func numberOfSectionsInTableView(tableView: UITableView) -> Int
   {
     return 1
+  }
+  
+  override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return displayedOrders.count
   }
   
   override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell

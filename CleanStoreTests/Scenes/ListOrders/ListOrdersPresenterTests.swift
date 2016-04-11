@@ -67,6 +67,7 @@ class ListOrdersPresenterTests: XCTestCase
     dateComponents.year = 2007
     dateComponents.month = 6
     dateComponents.day = 29
+    
     let date = NSCalendar.currentCalendar().dateFromComponents(dateComponents)!
     
     let orders = [Order(id: "abc123", date: date, email: "amy.apple@clean-swift.com", firstName: "Amy", lastName: "Apple", total: NSDecimalNumber(string: "1.23"))]
