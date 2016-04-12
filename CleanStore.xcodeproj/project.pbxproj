@@ -46,6 +46,9 @@
 		040D6AD51CBB9AEC00AAE74E /* ShowOrderInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D6AD11CBB9AEC00AAE74E /* ShowOrderInteractorTests.swift */; };
 		040D6AD61CBB9AEC00AAE74E /* ShowOrderPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D6AD21CBB9AEC00AAE74E /* ShowOrderPresenterTests.swift */; };
 		040D6AD71CBB9AEC00AAE74E /* ShowOrderViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 040D6AD31CBB9AEC00AAE74E /* ShowOrderViewControllerTests.swift */; };
+		041A1F9A1CBCE1500034B3AD /* CreateOrderInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A1F971CBCE1500034B3AD /* CreateOrderInteractorTests.swift */; };
+		041A1F9B1CBCE1500034B3AD /* CreateOrderPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A1F981CBCE1500034B3AD /* CreateOrderPresenterTests.swift */; };
+		041A1F9C1CBCE1500034B3AD /* CreateOrderViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 041A1F991CBCE1500034B3AD /* CreateOrderViewControllerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +114,9 @@
 		040D6AD11CBB9AEC00AAE74E /* ShowOrderInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowOrderInteractorTests.swift; path = Scenes/ShowOrder/ShowOrderInteractorTests.swift; sourceTree = "<group>"; };
 		040D6AD21CBB9AEC00AAE74E /* ShowOrderPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowOrderPresenterTests.swift; path = Scenes/ShowOrder/ShowOrderPresenterTests.swift; sourceTree = "<group>"; };
 		040D6AD31CBB9AEC00AAE74E /* ShowOrderViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShowOrderViewControllerTests.swift; path = Scenes/ShowOrder/ShowOrderViewControllerTests.swift; sourceTree = "<group>"; };
+		041A1F971CBCE1500034B3AD /* CreateOrderInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateOrderInteractorTests.swift; path = Scenes/CreateOrder/CreateOrderInteractorTests.swift; sourceTree = "<group>"; };
+		041A1F981CBCE1500034B3AD /* CreateOrderPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateOrderPresenterTests.swift; path = Scenes/CreateOrder/CreateOrderPresenterTests.swift; sourceTree = "<group>"; };
+		041A1F991CBCE1500034B3AD /* CreateOrderViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateOrderViewControllerTests.swift; path = Scenes/CreateOrder/CreateOrderViewControllerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +242,7 @@
 		040D6A611CB769C700AAE74E /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				041A1F961CBCE0DB0034B3AD /* CreateOrder */,
 				040D6AD01CBB9AD100AAE74E /* ShowOrder */,
 				040D6A621CB769CF00AAE74E /* ListOrders */,
 			);
@@ -307,6 +314,16 @@
 				040D6AD31CBB9AEC00AAE74E /* ShowOrderViewControllerTests.swift */,
 			);
 			name = ShowOrder;
+			sourceTree = "<group>";
+		};
+		041A1F961CBCE0DB0034B3AD /* CreateOrder */ = {
+			isa = PBXGroup;
+			children = (
+				041A1F971CBCE1500034B3AD /* CreateOrderInteractorTests.swift */,
+				041A1F981CBCE1500034B3AD /* CreateOrderPresenterTests.swift */,
+				041A1F991CBCE1500034B3AD /* CreateOrderViewControllerTests.swift */,
+			);
+			name = CreateOrder;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,12 +492,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				040D6AAB1CB7AFEE00AAE74E /* OrdersWorkerTest.swift in Sources */,
+				041A1F9B1CBCE1500034B3AD /* CreateOrderPresenterTests.swift in Sources */,
+				041A1F9C1CBCE1500034B3AD /* CreateOrderViewControllerTests.swift in Sources */,
 				040D69FC1CB7596700AAE74E /* CleanStoreTests.swift in Sources */,
 				040D6AD51CBB9AEC00AAE74E /* ShowOrderInteractorTests.swift in Sources */,
 				040D6A801CB7737100AAE74E /* ListOrdersPresenterTests.swift in Sources */,
 				040D6AD71CBB9AEC00AAE74E /* ShowOrderViewControllerTests.swift in Sources */,
 				040D6A7F1CB7737100AAE74E /* ListOrdersInteractorTests.swift in Sources */,
 				040D6AD61CBB9AEC00AAE74E /* ShowOrderPresenterTests.swift in Sources */,
+				041A1F9A1CBCE1500034B3AD /* CreateOrderInteractorTests.swift in Sources */,
 				040D6A811CB7737100AAE74E /* ListOrdersViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
